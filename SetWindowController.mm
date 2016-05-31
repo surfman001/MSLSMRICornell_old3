@@ -512,7 +512,7 @@ NSLog(@"dispinitmainviewer");
     
     int         times= [[mainViewer pixList] count];
     int         slices = [mainViewer maxMovieIndex];
-    int         lowerThreshold = 6, upThreshold = 50;
+    int         lowerThreshold = 6, upThreshold = 100;
 //     NSLog(@"times are %i, slices are %i",times,slices);
 //    slices = [[viewer imageView] curImage];
 //    NSLog(@"viewertimes are %i, slices are %i",times,slices);
@@ -527,7 +527,7 @@ NSLog(@"dispinitmainviewer");
     // settings needed in ITK import filter
     ImportFilterType::IndexType start;
     start[0] = 0;
-    start[0] = 0;
+    start[1] = 0;
     
     ImportFilterType::SizeType size;
     size[0] = [firstPix pwidth];
@@ -555,9 +555,10 @@ NSLog(@"dispinitmainviewer");
     // apply settings to ITK threshold filter
     thresholdFilter->SetLowerThreshold(lowerThreshold);
     thresholdFilter->SetUpperThreshold(upThreshold);
-    thresholdFilter->SetInsideValue(100);
+    thresholdFilter->SetInsideValue(90);
     thresholdFilter->SetOutsideValue(-1000);
     
+    /*
     // loop over all images
     for (int s=0; s<slices; s++)
     {
@@ -583,7 +584,20 @@ NSLog(@"dispinitmainviewer");
             // copy result to current pix
             memcpy( [[[mainViewer pixList:s] objectAtIndex:t] fImage], resultBuff, mem);
         }
-    }
+    }*/
+    NSMutableArray *PixList = [mainViewer pixList:0];
+    int t = [[mainViewer imageView] curImage];
+     DCMPix *pix = [PixList objectAtIndex:t];
+    importFilter->SetImportPointer([pix fImage], bufferSize, false);
+    thresholdFilter->SetInput(importFilter->GetOutput());
+    thresholdFilter->Update();
+    float* resultBuff = thresholdFilter->GetOutput()->GetBufferPointer();
+    
+    long mem = bufferSize * sizeof(float);
+    
+    // copy result to current pix
+    memcpy( [[[mainViewer pixList:0] objectAtIndex:t] fImage], resultBuff, mem);
+
     [mainViewer needsDisplayUpdate];
     
 
