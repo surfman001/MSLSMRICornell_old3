@@ -1,0 +1,6 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "MSLSMRICornell";
+CFBundleShortVersionString = "1.0";
+CFBundleGetInfoString = "MSLSMRICornell version 1.0, Copyright (c) 2016 Rijian.";
+NSHumanReadableCopyright = "Copyright (c) 2016 Rijian.";

@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E6F6AE91CFCA5FA00F56B9C /* ProjectDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AE51CFCA5FA00F56B9C /* ProjectDebug.h */; };
+		0E6F6AEA1CFCA5FA00F56B9C /* SetWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AE61CFCA5FA00F56B9C /* SetWindowController.h */; };
+		0E6F6AEB1CFCA5FA00F56B9C /* SetWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F6AE71CFCA5FA00F56B9C /* SetWindowController.mm */; };
+		0E6F6AEC1CFCA5FA00F56B9C /* SetWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F6AE81CFCA5FA00F56B9C /* SetWindowController.xib */; };
+		0E6F6AEF1CFCA61800F56B9C /* MSLSMRICornellFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AED1CFCA61800F56B9C /* MSLSMRICornellFilter.h */; };
+		0E6F6AF01CFCA61800F56B9C /* MSLSMRICornellFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F6AEE1CFCA61800F56B9C /* MSLSMRICornellFilter.mm */; };
+		0E6F6AFD1CFCA79900F56B9C /* DCMPix.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AF21CFCA79900F56B9C /* DCMPix.h */; };
+		0E6F6AFE1CFCA79900F56B9C /* DCMView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AF31CFCA79900F56B9C /* DCMView.h */; };
+		0E6F6AFF1CFCA79900F56B9C /* dicomFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AF41CFCA79900F56B9C /* dicomFile.h */; };
+		0E6F6B001CFCA79900F56B9C /* MyPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AF51CFCA79900F56B9C /* MyPoint.h */; };
+		0E6F6B011CFCA79900F56B9C /* OSIWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AF61CFCA79900F56B9C /* OSIWindowController.h */; };
+		0E6F6B021CFCA79900F56B9C /* PluginFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AF71CFCA79900F56B9C /* PluginFilter.h */; };
+		0E6F6B031CFCA79900F56B9C /* ROI.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AF81CFCA79900F56B9C /* ROI.h */; };
+		0E6F6B041CFCA79900F56B9C /* Schedulable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AF91CFCA79900F56B9C /* Schedulable.h */; };
+		0E6F6B051CFCA79900F56B9C /* Scheduler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AFA1CFCA79900F56B9C /* Scheduler.h */; };
+		0E6F6B061CFCA79900F56B9C /* StaticScheduler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AFB1CFCA79900F56B9C /* StaticScheduler.h */; };
+		0E6F6B071CFCA79900F56B9C /* ViewerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AFC1CFCA79900F56B9C /* ViewerController.h */; };
+		8420023212E829A200E1E9CE /* OsiriXAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8420023112E829A200E1E9CE /* OsiriXAPI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8D5B49AE048680CD000E48DA /* MSLSMRICornell_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF630370AF2F00C91783 /* MSLSMRICornell_Prefix.pch */; };
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		0E6F6AE51CFCA5FA00F56B9C /* ProjectDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDebug.h; sourceTree = "<group>"; };
+		0E6F6AE61CFCA5FA00F56B9C /* SetWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetWindowController.h; sourceTree = "<group>"; };
+		0E6F6AE71CFCA5FA00F56B9C /* SetWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SetWindowController.mm; sourceTree = "<group>"; };
+		0E6F6AE81CFCA5FA00F56B9C /* SetWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetWindowController.xib; sourceTree = "<group>"; };
+		0E6F6AED1CFCA61800F56B9C /* MSLSMRICornellFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLSMRICornellFilter.h; sourceTree = "<group>"; };
+		0E6F6AEE1CFCA61800F56B9C /* MSLSMRICornellFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MSLSMRICornellFilter.mm; sourceTree = "<group>"; };
+		0E6F6AF21CFCA79900F56B9C /* DCMPix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMPix.h; sourceTree = "<group>"; };
+		0E6F6AF31CFCA79900F56B9C /* DCMView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMView.h; sourceTree = "<group>"; };
+		0E6F6AF41CFCA79900F56B9C /* dicomFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dicomFile.h; sourceTree = "<group>"; };
+		0E6F6AF51CFCA79900F56B9C /* MyPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPoint.h; sourceTree = "<group>"; };
+		0E6F6AF61CFCA79900F56B9C /* OSIWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSIWindowController.h; sourceTree = "<group>"; };
+		0E6F6AF71CFCA79900F56B9C /* PluginFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginFilter.h; sourceTree = "<group>"; };
+		0E6F6AF81CFCA79900F56B9C /* ROI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROI.h; sourceTree = "<group>"; };
+		0E6F6AF91CFCA79900F56B9C /* Schedulable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedulable.h; sourceTree = "<group>"; };
+		0E6F6AFA1CFCA79900F56B9C /* Scheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scheduler.h; sourceTree = "<group>"; };
+		0E6F6AFB1CFCA79900F56B9C /* StaticScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticScheduler.h; sourceTree = "<group>"; };
+		0E6F6AFC1CFCA79900F56B9C /* ViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewerController.h; sourceTree = "<group>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF630370AF2F00C91783 /* MSLSMRICornell_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLSMRICornell_Prefix.pch; sourceTree = "<group>"; };
+		8420023112E829A200E1E9CE /* OsiriXAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OsiriXAPI.framework; sourceTree = "<group>"; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB5D36050680E57E00F4007A /* MSLSMRICornell.osirixplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSLSMRICornell.osirixplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				8420023212E829A200E1E9CE /* OsiriXAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* MSLSMRICornell */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = MSLSMRICornell;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				8420023112E829A200E1E9CE /* OsiriXAPI.framework */,
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0E6F6AF11CFCA79900F56B9C /* OsiriX Headers */,
+				AB2C26750677B0C400A08910 /* MSLSMRICornellFilter */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		0E6F6AF11CFCA79900F56B9C /* OsiriX Headers */ = {
+			isa = PBXGroup;
+			children = (
+				0E6F6AF21CFCA79900F56B9C /* DCMPix.h */,
+				0E6F6AF31CFCA79900F56B9C /* DCMView.h */,
+				0E6F6AF41CFCA79900F56B9C /* dicomFile.h */,
+				0E6F6AF51CFCA79900F56B9C /* MyPoint.h */,
+				0E6F6AF61CFCA79900F56B9C /* OSIWindowController.h */,
+				0E6F6AF71CFCA79900F56B9C /* PluginFilter.h */,
+				0E6F6AF81CFCA79900F56B9C /* ROI.h */,
+				0E6F6AF91CFCA79900F56B9C /* Schedulable.h */,
+				0E6F6AFA1CFCA79900F56B9C /* Scheduler.h */,
+				0E6F6AFB1CFCA79900F56B9C /* StaticScheduler.h */,
+				0E6F6AFC1CFCA79900F56B9C /* ViewerController.h */,
+			);
+			path = "OsiriX Headers";
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB5D36050680E57E00F4007A /* MSLSMRICornell.osirixplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF630370AF2F00C91783 /* MSLSMRICornell_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		AB2C26750677B0C400A08910 /* MSLSMRICornellFilter */ = {
+			isa = PBXGroup;
+			children = (
+				0E6F6AED1CFCA61800F56B9C /* MSLSMRICornellFilter.h */,
+				0E6F6AEE1CFCA61800F56B9C /* MSLSMRICornellFilter.mm */,
+				0E6F6AE51CFCA5FA00F56B9C /* ProjectDebug.h */,
+				0E6F6AE61CFCA5FA00F56B9C /* SetWindowController.h */,
+				0E6F6AE71CFCA5FA00F56B9C /* SetWindowController.mm */,
+				0E6F6AE81CFCA5FA00F56B9C /* SetWindowController.xib */,
+			);
+			name = MSLSMRICornellFilter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8D5B49AD048680CD000E48DA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E6F6B031CFCA79900F56B9C /* ROI.h in Headers */,
+				0E6F6AFE1CFCA79900F56B9C /* DCMView.h in Headers */,
+				0E6F6B021CFCA79900F56B9C /* PluginFilter.h in Headers */,
+				0E6F6AEF1CFCA61800F56B9C /* MSLSMRICornellFilter.h in Headers */,
+				0E6F6AFF1CFCA79900F56B9C /* dicomFile.h in Headers */,
+				0E6F6AFD1CFCA79900F56B9C /* DCMPix.h in Headers */,
+				0E6F6B061CFCA79900F56B9C /* StaticScheduler.h in Headers */,
+				0E6F6B011CFCA79900F56B9C /* OSIWindowController.h in Headers */,
+				0E6F6B041CFCA79900F56B9C /* Schedulable.h in Headers */,
+				0E6F6B051CFCA79900F56B9C /* Scheduler.h in Headers */,
+				0E6F6AEA1CFCA5FA00F56B9C /* SetWindowController.h in Headers */,
+				0E6F6AE91CFCA5FA00F56B9C /* ProjectDebug.h in Headers */,
+				8D5B49AE048680CD000E48DA /* MSLSMRICornell_Prefix.pch in Headers */,
+				0E6F6B071CFCA79900F56B9C /* ViewerController.h in Headers */,
+				0E6F6B001CFCA79900F56B9C /* MyPoint.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* MSLSMRICornell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE6A9A9008AC841300D0C1EE /* Build configuration list for PBXNativeTarget "MSLSMRICornell" */;
+			buildPhases = (
+				8D5B49AD048680CD000E48DA /* Headers */,
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				8D5B49B5048680CD000E48DA /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MSLSMRICornell;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = Invert;
+			productReference = AB5D36050680E57E00F4007A /* MSLSMRICornell.osirixplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = CE6A9A9408AC841300D0C1EE /* Build configuration list for PBXProject "MSLSMRICornell" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* MSLSMRICornell */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* MSLSMRICornell */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E6F6AEC1CFCA5FA00F56B9C /* SetWindowController.xib in Resources */,
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		8D5B49B5048680CD000E48DA /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E6F6AEB1CFCA5FA00F56B9C /* SetWindowController.mm in Sources */,
+				0E6F6AF01CFCA61800F56B9C /* MSLSMRICornellFilter.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE6A9A9108AC841300D0C1EE /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MSLSMRICornell_Prefix.pch;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					ITK180/Modules/Core/Common,
+					ITK180/Modules/Core/Common/include,
+					ITK180/Modules/ThirdParty/VNL/src/vxl/vcl,
+					ITK180/Modules/ThirdParty/VNL/src/vxl/core,
+					ITK180/Modules/Filtering/Thresholding/include,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Plug-ins";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = MSLSMRICornell;
+				SDKROOT = macosx10.9;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = osirixplugin;
+				ZERO_LINK = NO;
+			};
+			name = Development;
+		};
+		CE6A9A9208AC841300D0C1EE /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MSLSMRICornell_Prefix.pch;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					ITK180/Modules/Core/Common,
+					ITK180/Modules/Core/Common/include,
+					ITK180/Modules/ThirdParty/VNL/src/vxl/vcl,
+					ITK180/Modules/ThirdParty/VNL/src/vxl/core,
+					ITK180/Modules/Filtering/Thresholding/include,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Plug-ins";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = MSLSMRICornell;
+				SDKROOT = macosx10.9;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = osirixplugin;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		CE6A9A9508AC841300D0C1EE /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				SDKROOT = macosx10.5;
+			};
+			name = Development;
+		};
+		CE6A9A9608AC841300D0C1EE /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					x86_64,
+					i386,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				SDKROOT = macosx10.5;
+			};
+			name = Deployment;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE6A9A9008AC841300D0C1EE /* Build configuration list for PBXNativeTarget "MSLSMRICornell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE6A9A9108AC841300D0C1EE /* Development */,
+				CE6A9A9208AC841300D0C1EE /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+		CE6A9A9408AC841300D0C1EE /* Build configuration list for PBXProject "MSLSMRICornell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE6A9A9508AC841300D0C1EE /* Development */,
+				CE6A9A9608AC841300D0C1EE /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

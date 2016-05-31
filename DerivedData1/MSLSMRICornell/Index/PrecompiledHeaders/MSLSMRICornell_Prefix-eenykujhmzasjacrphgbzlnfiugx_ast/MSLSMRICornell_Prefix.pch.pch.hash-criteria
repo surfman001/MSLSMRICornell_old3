@@ -1,0 +1,31 @@
+Contents of /Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/MSLSMRICornell_Prefix.pch
+-x
+objective-c++
+-arch
+i386
+-fretain-comments-from-system-headers
+-fpascal-strings
+-O0
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+-fasm-blocks
+-mmacosx-version-min=10.7
+-g
+-fvisibility-inlines-hidden
+-I/Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/DerivedData1/MSLSMRICornell/Build/Products/Development/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-IITK180/Modules/Core/Common
+-IITK180/Modules/Core/Common/include
+-IITK180/Modules/ThirdParty/VNL/src/vxl/vcl
+-IITK180/Modules/ThirdParty/VNL/src/vxl/core
+-IITK180/Modules/Filtering/Thresholding/include
+-F/Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/DerivedData1/MSLSMRICornell/Build/Products/Development
+-F/Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell
+-ferror-limit=10
+-working-directory=/Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell
+-Xclang
+-detailed-preprocessing-record
+i386-apple-darwin14.1.1
+"4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.38)"
+SDK_PRODUCT_BUILD_VERSION=13C64
+13C64
