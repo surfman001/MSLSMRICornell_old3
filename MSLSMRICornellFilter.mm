@@ -17,7 +17,7 @@
 {
 
 	
-	// In this plugin, we will simply duplicate the current 2D window!
+	//
 	
 	
 	
@@ -42,24 +42,16 @@
 + (id) getControllerForMainViewer:(ViewerController*) mViewer registeredViewer:(ViewerController*) rViewer
 {
 	NSArray *winList = [NSApp windows];
-	int i=0;
 	for( id loopItem in winList)
 	{
-		i++;
-        NSLog(@"%iloopItem%@",i,loopItem);
         if( [[[loopItem windowController] windowNibName] isEqualToString:@"SetWindowController"])
 		{
 			if( [[loopItem windowController] mainViewer] == mViewer &&
 			   [[loopItem windowController] registeredViewer] == rViewer)
 			{
-				NSLog(@"itis nViewer");
-                DebugLog(@"Found an existing segmentation window controller, just using that");
 				return [loopItem windowController];
 			}
-            else
-            {
-                NSLog(@"itisn't nViewer");
-            }
+
 		}
 	}
 	

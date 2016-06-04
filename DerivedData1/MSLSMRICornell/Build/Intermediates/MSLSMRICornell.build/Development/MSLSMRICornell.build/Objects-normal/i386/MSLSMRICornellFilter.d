@@ -9,5 +9,4 @@ dependencies: \
   /Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/OsiriXAPI.framework/Headers/N3Geometry.h \
   /Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/OsiriXAPI.framework/Headers/MyPoint.h \
   /Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/OsiriXAPI.framework/Headers/ROI.h \
-  /Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/SetWindowController.h \
-  /Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/ProjectDebug.h
+  /Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/SetWindowController.h

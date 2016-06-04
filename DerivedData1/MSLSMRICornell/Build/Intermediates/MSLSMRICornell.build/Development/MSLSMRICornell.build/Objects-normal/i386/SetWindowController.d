@@ -10,7 +10,6 @@ dependencies: \
   /Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/OsiriXAPI.framework/Headers/MyPoint.h \
   /Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/OsiriXAPI.framework/Headers/ROI.h \
   /Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/SetWindowController.h \
-  /Users/rijiansu/Downloads/osirixCMRI/MSLSMRICornell/ProjectDebug.h \
   ITK180/Modules/Core/Common/include/itkImage.h \
   ITK180/Modules/Core/Common/include/itkImageRegion.h \
   ITK180/Modules/Core/Common/include/itkRegion.h \

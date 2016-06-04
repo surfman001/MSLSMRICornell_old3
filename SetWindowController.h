@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 #import "OsiriXAPI/ViewerController.h"
-#import "ProjectDebug.h"
 #import <OsiriXAPI/PluginFilter.h>
 
 @class ITKRegionGrowing3D;

@@ -62,7 +62,7 @@ NSLog(@"dispinitmainviewer");
 		if(registeredViewer != nil)
         {
             NSLog(@"only for test31");
-			//segmenter = [[ITKRegionGrowing3D alloc] initWithMainViewer:mainViewer regViewer:registeredViewer];
+
         }
 		else
         {
@@ -172,14 +172,11 @@ NSLog(@"dispinitmainviewer");
 
 - (void) dealloc
 {
-	DebugLog(@"NMRegionGrowingController dealloc");
-	//[segmenter release];
 	[super dealloc];
 }
 
 - (IBAction) manualRadioSelChanged:(id) sender
 {
-	DebugLog(@"Manual / Cutoff mode changed");
     
 	//deactivate certain options depending upon the user's selection
 	if([manualRadioGroup selectedRow] == 0)
@@ -204,25 +201,21 @@ NSLog(@"dispinitmainviewer");
 
 - (void) CloseViewerNotification:(NSNotification*) note
 {
-	DebugLog(@"NMRegionGrowingController: CloseCiewerNotification received");
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[self close];
 }
 
 - (void) mouseViewerDown:(NSNotification*) note
 {
-	DebugLog(@"NMRegionGrowingController: Mouse down event received");
 	int xpx, ypx, zpx; // coordinate in pixels
 	float xmm, ymm, zmm; // coordinate in millimeters
     
 	//Disable the source viewer controller from reacting to the click events
 	if([disableClickButton state] == NSOnState){
-		DebugLog(@"Disabling viewer from reacting to click event");
 		[[note userInfo] setValue: [NSNumber numberWithBool: YES] forKey: @"stopMouseDown"];
 	}
 	else
 	{
-		DebugLog(@"Ignoring mouse event, passing to viewerController object");
 		return;
 	}
 	
@@ -232,7 +225,7 @@ NSLog(@"dispinitmainviewer");
         
 		if([enableRegViewerButton state] == NSOnState)
 		{
-			DebugLog(@"Using values from the registered viewer for determining seed point location");
+
 			NSPoint np;
 			np.x = [[[note userInfo] objectForKey:@"X"] intValue];
 			np.y = [[[note userInfo] objectForKey:@"Y"] intValue];
@@ -252,7 +245,7 @@ NSLog(@"dispinitmainviewer");
 		}
 		else
 		{
-			DebugLog(@"Using values from the main viewer for determining seed point location");
+
 			xpx = [[[note userInfo] objectForKey:@"X"] intValue];
 			ypx = [[[note userInfo] objectForKey:@"Y"] intValue];
 			zpx = [[mainViewer imageView] curImage];
@@ -285,7 +278,7 @@ NSLog(@"dispinitmainviewer");
 
 - (IBAction) updateThresholds:(id) sender
 {
-	DebugLog(@"NMRegionGrowingController: updating the thresholds");
+
 	
 	if([[algorithmPopUp selectedItem] tag] < 2 && [manualRadioGroup selectedRow] == 1 && seedPointSelected)
 	{
@@ -368,8 +361,8 @@ NSLog(@"dispinitmainviewer");
 		else if(searchRegion[2] < 0)
 			searchRegion[2] = 0;
 		
-		DebugLog(@"max search region sizes: %d %d %d", searchRegion[0], searchRegion[1], searchRegion[2]);
-		DebugLog(@"max search region index: %d %d %d", searchIndex[0], searchIndex[1], searchIndex[2]);
+		NSLog(@"max search region sizes: %d %d %d", searchRegion[0], searchRegion[1], searchRegion[2]);
+        NSLog(@"max search region index: %d %d %d", searchIndex[0], searchIndex[1], searchIndex[2]);
         
 		if([enableRegViewerButton state] == NSOnState)
 		{
@@ -406,8 +399,8 @@ NSLog(@"dispinitmainviewer");
 			displayIndex[1] = searchIndex[1];
 		}
 		
-		DebugLog(@"display search region sizes: %d %d %d", displayRegion[0], displayRegion[1], displayRegion[2]);
-		DebugLog(@"display search region index: %d %d", displayIndex[0], displayIndex[1]);
+		NSLog(@"display search region sizes: %d %d %d", displayRegion[0], displayRegion[1], displayRegion[2]);
+		NSLog(@"display search region index: %d %d", displayIndex[0], displayIndex[1]);
         
 //		float maxVal = [segmenter findMaximum:searchIndex region:searchRegion];
 //		DebugLog(@"Max value in region %f", maxVal);
@@ -466,7 +459,7 @@ NSLog(@"dispinitmainviewer");
 {
 	
     NSLog(@"Calculate segmentation trigerred");
-	/*int seed[3], radius[3], iterations = 0;
+	int seed[3], radius[3], iterations = 0;
    
 	
 	if([[algorithmPopUp selectedItem] tag] == 1)
@@ -493,7 +486,7 @@ NSLog(@"dispinitmainviewer");
 	[self removeSeedPointROI];
 	
 	NSLog([roiNameBox stringValue]);
-	[segmenter		regionGrowing:-1
+	/* [segmenter		regionGrowing:-1
 					seedPoint:seed
                          name:[roiNameBox stringValue]
                         color:[colorBox color]
@@ -513,6 +506,7 @@ NSLog(@"dispinitmainviewer");
     int         times= [[mainViewer pixList] count];
     int         slices = [mainViewer maxMovieIndex];
     int         lowerThreshold = 6, upThreshold = 100;
+    
 //     NSLog(@"times are %i, slices are %i",times,slices);
 //    slices = [[viewer imageView] curImage];
 //    NSLog(@"viewertimes are %i, slices are %i",times,slices);
@@ -528,12 +522,197 @@ NSLog(@"dispinitmainviewer");
     ImportFilterType::IndexType start;
     start[0] = 0;
     start[1] = 0;
-    
+    float maxIntensityValue = 65536.0;
     ImportFilterType::SizeType size;
     size[0] = [firstPix pwidth];
     size[1] = [firstPix pheight];
     long bufferSize = size[0] * size[1];
+    float imageIntensity[size[1]][size[0]], signImage[size[1]][size[0]];
+    float temporarySignImage[size[1]][size[0]];
+    //float segmentationImage[size[0]][size[1]];
+    float labelCurrentMean = 0,labelCurrentSTD;
+    int deltaFactor = 30;
+    int deltaValue;
+    int deltaHead = 1;
+    int deltaEnd;
+    int deltaMid;
+    BOOL indicator = YES, flagHead = YES, flagMid = YES, flagEnd = YES;
+    float currentThreshold;
+    int seedSearchDown = -6;
+    int seedSearchUp = 6;
+    int searchDown = -1;
+    int searchUp = 1;
+    int stackSeed[bufferSize][2];
+    stackSeed[0][0]=seed[0];
+    stackSeed[0][1]=seed[1];
+    long int stackStart = 0;
+    long int stackEnd = 0;
+    long unsigned currentX = stackSeed[stackStart][0];
+    long unsigned currentY = stackSeed[stackStart][1];
+    long int labelCount = 0;
+    float seedIntensityValue;
+    while (indicator)
+    {
+        indicator = NO;
+        if (flagHead)
+        {
+            flagHead = NO;
+
+            for (int i=0; i<=size[0]; i++)
+            {
+                for (int j=0; j<=size[1]; j++)
+                {
+                    temporarySignImage[i][j] = 0.0;
+                }
+            }
+           
+            if (fabs(temporarySignImage[seed[0]][seed[1]])<0.1)
+            {
+                [self setIntensityValue:[[[mainViewer imageView] curDCM] getPixelValueX: seed[0] Y:seed[1]]];
+                temporarySignImage[seed[0]][seed[1]] = intensityValue;
+                seedIntensityValue = intensityValue;
+                
+                currentThreshold = intensityValue;
+                labelCount++;
+                
+                for (int m=seedSearchDown; m<=seedSearchUp; m++)
+                {
+                    
+                    for (int n=seedSearchDown; n<=seedSearchUp; n++)
+                    {
+                        [self setIntensityValue:[[[mainViewer imageView] curDCM] getPixelValueX: (currentX+m) Y:(currentY+n)]];
+                        float currentIntensityValue;
+                        currentIntensityValue = intensityValue;
+                        if (temporarySignImage[currentY+n][currentX+m]==0.0&&fabsf(currentIntensityValue-seedIntensityValue)<=(seedIntensityValue/10))
+                        {
+                        
+                            
+                            currentIntensityValue = intensityValue;
+                            if (fabsf(seedIntensityValue-currentIntensityValue)<=currentThreshold&&(currentX+m)<=size[0]&&(currentX+m)>=1&&(currentY+n)<=size[1]&&(currentY+n)>=1&&temporarySignImage[currentY+n][currentX+m]<0.1&&currentIntensityValue<maxIntensityValue&&currentIntensityValue>0)
+                            // the pixel is inside the border
+                            // rule1=(CurrX+m)<=Width&(CurrX+m)>=1&(CurrY+n)<=Height&(CurrY+n)>=1;
+                            // //if the pixel is be labeled
+                            // rule2=sign_image(CurrX+m,CurrY+n)==0;
+                            // //if the gray value less than threshold
+                            // rule3=abs(double(image(CurrX,CurrY))-double(image(CurrX+m,CurrY+n)))<Threshold;
+                            // //rule=(rule1&rule2&rule3)
+                            
+                            
+                            {
+                                
+                                stackEnd++;
+                                stackSeed[stackEnd][0]=currentX+m; //push the new pixel in the queue
+                                stackSeed[stackEnd][1]=currentY+n;
+                                //NSLog(@"stackEnd=%li, curx=%d,cury=%d",stackEnd,stackSeed[stackEnd][0],stackSeed[stackEnd][1]);
+                                temporarySignImage[currentY+n][currentX+m] = currentIntensityValue;
+                                labelCount++;
+                            }
+                        }
+
+                    }
+                    
+                }
+                int i=0;
+                float localSum = 0.0;
+                for (int m=seedSearchDown; m<=seedSearchUp; m++)
+                {
+                    for (int n=seedSearchDown; n<=seedSearchUp; n++)
+                    {
+                        if (fabsf(temporarySignImage[currentY+n][currentX+m])>0.01)
+                        {
+                            i++;
+                            localSum = localSum + temporarySignImage[currentY+n][currentX+m];
+                            
+                        }
+                    }
+                }
+                
+                labelCurrentMean = localSum/i;
+                localSum = 0.0;
+                for (int m=seedSearchDown; m<=seedSearchUp; m++)
+                {
+                    for (int n=seedSearchDown; n<=seedSearchUp; n++)
+                    {
+                        if (fabsf(temporarySignImage[currentY+n][currentX+m])>0.01)
+                        {
+                            i++;
+                            float temp=temporarySignImage[currentY+n][currentX+m]-labelCurrentMean;
+                            
+                            localSum = localSum + pow(temp,2.0);
+                            
+                        }
+                    }
+                }
+                labelCurrentSTD = localSum/i;
+                currentThreshold = labelCurrentMean/6;
+                NSLog(@"labelCurrentMean is %f,currentThreshold is %f",labelCurrentMean,currentThreshold);
+                stackStart++;
+                while(stackStart<=stackEnd)         //there is one pixel, which isn't dealed with, at least
+                {
+                    
+                    currentX=stackSeed[stackStart][0];  //coordinate of current coordinate
+                    currentY=stackSeed[stackStart][1];
+                    //NSLog(@"currentX,currentY=(%lu,%lu)",currentX,currentY);
+                    for (int m=searchDown;m<=searchUp;m++)                      //ergodic 8 pixel nearby the current coordinate ????8???
+                    {
+                        for (int n=searchDown;n<=searchUp;n++)
+                        {
+                            [self setIntensityValue:[[[mainViewer imageView] curDCM] getPixelValueX: (currentX+m) Y:(currentY+n)]];
+                            float currentIntensityValue;
+                            currentIntensityValue = intensityValue;
+                            if (temporarySignImage[currentY+n][currentX+m]==0.0&&fabsf(currentIntensityValue-seedIntensityValue)<=(labelCurrentSTD))
+                            {
+
+                                [self setIntensityValue:[[[mainViewer imageView] curDCM] getPixelValueX: currentX Y:currentY]];
+                                float newSeedIntensityValue=intensityValue;//the name of variable is seedIntensityValue, it it change in fact.
+                
+                
+                                if ((currentX+m)<=size[0]&&(currentX+m)>=1&&(currentY+n)<=size[1]&&(currentY+n)>=1&&fabsf(temporarySignImage[currentY+n][currentX+m])<0.1&&fabsf(newSeedIntensityValue-currentIntensityValue)<=currentThreshold&&currentIntensityValue<maxIntensityValue&&currentIntensityValue>0)
+                                {
+                            
+                                    // NSLog(@"found the pixel");
+                                    stackEnd++;
+                                    stackSeed[stackEnd][0]=currentX+m; //push the new pixel in the queue
+                                    stackSeed[stackEnd][1]=currentY+n;
+                                    // NSLog(@"stackEnd=%li, curx=%d,cury=%d",stackEnd,stackSeed[stackEnd][0],stackSeed[stackEnd][1]);
+                                    temporarySignImage[currentY+n][currentX+m] = currentIntensityValue;
+                                    labelCount = labelCount + 1;
+                                }
+                            }
+                        }
+                    }
+                
+                
+                //                currentThreshold = mean2(temporarySignImage(temporarySignImage~=0))/delta(j);
+                    stackStart++;
+                }
+            }
+        }
+    }
+                //thresholdAll(deltaHead) = currentThreshold;
+               // labelAllCount(deltaHead) = labelCount;                 //different threshold responsble for pixels
+               // labelAllMean(deltaHead) = labelCurrentMean;
+               // tempImagehead = temporarySignImage;         //temporary image of head element
+                
+        
+                
+                
+                
+
+                
+        
+/*            for (int i=0; i<=size[0]; i++)
+            {
+                for (int j=0; j<=size[1]; j++)
+                {
+                    NSLog(@"temp(%i,%i)=%f",i,j, temporarySignImage[i][j]) ;
+                }
+            }*/
+            
+        
     
+    
+ /*
     ImportFilterType::RegionType region;
     double  origin[2];
     double  voxelSpacing[2];
@@ -558,7 +737,7 @@ NSLog(@"dispinitmainviewer");
     thresholdFilter->SetInsideValue(90);
     thresholdFilter->SetOutsideValue(-1000);
     
-    /*
+    
     // loop over all images
     for (int s=0; s<slices; s++)
     {
@@ -584,20 +763,44 @@ NSLog(@"dispinitmainviewer");
             // copy result to current pix
             memcpy( [[[mainViewer pixList:s] objectAtIndex:t] fImage], resultBuff, mem);
         }
+    }
+    //test the intensityValue in the region from (120, 260) to (140, 280)
+    for (int xcc=120; xcc<140; xcc++)
+        for (int ycc=260; ycc<280; ycc++) {
+            [self setIntensityValue:[[[registeredViewer imageView] curDCM] getPixelValueX: xcc Y:ycc]];
+            NSLog(@"(%i,%i)= %f",xcc,ycc,intensityValue);
+
+        }
+  
+    for (int i=0; i<=size[0]; i++)
+    {
+        for (int j=0; j<=size[1]; j++)
+        {
+            NSLog(@"temp(%i,%i)=%f",i,j, temporarySignImage[i][j]) ;
+        }
     }*/
     NSMutableArray *PixList = [mainViewer pixList:0];
     int t = [[mainViewer imageView] curImage];
      DCMPix *pix = [PixList objectAtIndex:t];
-    importFilter->SetImportPointer([pix fImage], bufferSize, false);
-    thresholdFilter->SetInput(importFilter->GetOutput());
-    thresholdFilter->Update();
-    float* resultBuff = thresholdFilter->GetOutput()->GetBufferPointer();
-    
+    //importFilter->SetImportPointer([pix fImage], bufferSize, false);
+    //thresholdFilter->SetInput(importFilter->GetOutput());
+    //thresholdFilter->Update();
+    //float* resultBuff = thresholdFilter->GetOutput()->GetBufferPointer();
+/*    float * resultBuff;
+    resultBuff = &temporarySignImage[0][0];
     long mem = bufferSize * sizeof(float);
     
     // copy result to current pix
-    memcpy( [[[mainViewer pixList:0] objectAtIndex:t] fImage], resultBuff, mem);
-
+    memcpy( [[[mainViewer pixList:0] objectAtIndex:t] fImage], resultBuff, mem);*/
+   // [self setIntensityValue:[[[mainViewer imageView] curDCM] getPixelValueX: seed[0] Y:seed[1]]];
+    for (int i=0; i<=size[0]; i++)
+    {
+        for (int j=0; j<=size[1]; j++)
+        {
+            if(temporarySignImage[i][j] > 0.0f)
+                [[[mainViewer imageView] curDCM] setPixelX:j Y:i value:6255];
+        }
+    }
     [mainViewer needsDisplayUpdate];
     
 
@@ -635,7 +838,7 @@ NSLog(@"dispinitmainviewer");
 
 - (void) removeSeedPointROI
 {
-	DebugLog(@"Removing Seed ROI");
+	NSLog(@"Removing Seed ROI");
 	NSMutableArray *roiSeriesList = [mainViewer roiList];
 	for(NSMutableArray* roiImageList in roiSeriesList)
 	{
@@ -653,12 +856,12 @@ NSLog(@"dispinitmainviewer");
 
 - (IBAction) showSeedEnable:(id) sender
 {
-	DebugLog(@"Setting seed point");
+	NSLog(@"Setting seed point");
 	[self removeSeedPointROI];
 	
 	if([showSeedButton state] == NSOnState)
 	{
-		DebugLog(@"Displaying seed point ROI");
+		NSLog(@"Displaying seed point ROI");
 		NSMutableArray *roiSeriesList = [mainViewer roiList];
 		NSRect rect;
 		
@@ -686,12 +889,12 @@ NSLog(@"dispinitmainviewer");
 
 - (IBAction) updateAlgorithm:(id) sender;
 {
-	DebugLog(@"NMRegionGrowingController: algorithm selection changed");
+	NSLog(@"NMRegionGrowingController: algorithm selection changed");
 	NSMenuItem* item = [algorithmPopUp selectedItem];
 	
 	if([item tag] < 2)
 	{
-		DebugLog(@"Displaying Connected / neighbor parameters panel");
+		NSLog(@"Displaying Connected / neighbor parameters panel");
 		//first resize the window, then switch the view
 		NSRect r = [[self window] frame];
 		r.size.height = 650; //Size in IB plus 16px title
@@ -722,7 +925,7 @@ NSLog(@"dispinitmainviewer");
 	}
 	else if([item tag] == 2)
 	{
-		DebugLog(@"Displaying Confidence parameters panel");
+		NSLog(@"Displaying Confidence parameters panel");
 		//first switch the view, then resize the window
 		[parameterView selectTabViewItemAtIndex:1];
 		
@@ -741,7 +944,7 @@ NSLog(@"dispinitmainviewer");
 	}
 	else		//current only 4 items
 	{
-		DebugLog(@"Displaying gradient parameters panel");
+		NSLog(@"Displaying gradient parameters panel");
 		//first switch the view, then resize the window
 		[parameterView selectTabViewItemAtIndex:2];
 		
@@ -763,7 +966,7 @@ NSLog(@"dispinitmainviewer");
 
 - (IBAction) resetDefaults:(id) sender
 {
-	DebugLog(@"Revert to default parameters requested");
+	NSLog(@"Revert to default parameters requested");
 	int selection = NSRunAlertPanel(@"Revert to Defaults", @"Do you really want to revert to the default paramters?", @"Yes", @"No", NULL);
 	
 	if(selection == 1)	//first reset the defaults dictionary, then reset the interface

@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <OsiriXAPI/PluginFilter.h>
 #import "SetWindowController.h"
-#import "ProjectDebug.h"
+
 @interface MSLSMRICornellFilter : PluginFilter {
 
 }
