@@ -7,8 +7,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SetWindowController">
             <connections>
+                <outlet property="colorBox" destination="alZ-hQ-ofn" id="FyQ-Zg-ZRT"/>
                 <outlet property="disableClickButton" destination="FPy-n6-yAH" id="8W2-ow-UA1"/>
                 <outlet property="enableRegViewerButton" destination="C1d-Em-sb1" id="LT0-q2-k6M"/>
+                <outlet property="roiNameBox" destination="fBv-Vc-fIG" id="iB9-Bh-HyM"/>
                 <outlet property="showMaxRegionButton" destination="xUi-AS-mlx" id="nNL-Mc-69y"/>
                 <outlet property="showSeedButton" destination="vdp-8U-PJI" id="5sa-n9-U2k"/>
             </connections>
@@ -43,11 +45,11 @@
                                     </buttonCell>
                                     <cells>
                                         <column>
-                                            <buttonCell type="radio" title="Automatic Segmentation" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="Svr-kP-5TD">
+                                            <buttonCell type="radio" title="Semiautomatic Segmentation" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="Svr-kP-5TD">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
-                                            <buttonCell type="radio" title="Semiautomatic Segmentation" imagePosition="left" alignment="left" inset="2" id="tMW-db-SNq">
+                                            <buttonCell type="radio" title="Automatic Segmentation" imagePosition="left" alignment="left" inset="2" id="tMW-db-SNq">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -123,7 +125,7 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" appearanceType="aqua" title="Parameters" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="gOw-sE-sEl">
-                        <rect key="frame" x="40" y="142" width="300" height="293"/>
+                        <rect key="frame" x="40" y="162" width="300" height="293"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <view key="contentView">
                             <rect key="frame" x="1" y="1" width="298" height="277"/>
@@ -467,10 +469,10 @@
                     <constraint firstItem="gOw-sE-sEl" firstAttribute="leading" secondItem="3oj-h5-qze" secondAttribute="leading" id="96P-WU-gqb"/>
                     <constraint firstItem="gOw-sE-sEl" firstAttribute="centerX" secondItem="y24-it-yoO" secondAttribute="centerX" id="GzJ-Sd-fkE"/>
                     <constraint firstItem="gOw-sE-sEl" firstAttribute="leading" secondItem="iGh-HV-mY5" secondAttribute="leading" constant="-17" id="R8i-UB-syN"/>
-                    <constraint firstItem="gOw-sE-sEl" firstAttribute="top" secondItem="y24-it-yoO" secondAttribute="top" constant="101" id="RlP-I9-XaJ"/>
+                    <constraint firstItem="gOw-sE-sEl" firstAttribute="top" secondItem="y24-it-yoO" secondAttribute="top" constant="81" id="RlP-I9-XaJ"/>
                     <constraint firstItem="gOw-sE-sEl" firstAttribute="trailing" secondItem="3oj-h5-qze" secondAttribute="trailing" id="aJw-k8-Phr"/>
                     <constraint firstItem="rpG-jO-KFR" firstAttribute="baseline" secondItem="iGh-HV-mY5" secondAttribute="baseline" id="f1O-SY-LPQ"/>
-                    <constraint firstItem="3oj-h5-qze" firstAttribute="top" secondItem="gOw-sE-sEl" secondAttribute="bottom" constant="8" symbolic="YES" id="u5x-X2-Jch"/>
+                    <constraint firstItem="3oj-h5-qze" firstAttribute="top" secondItem="gOw-sE-sEl" secondAttribute="bottom" constant="28" id="u5x-X2-Jch"/>
                     <constraint firstItem="rpG-jO-KFR" firstAttribute="top" secondItem="3oj-h5-qze" secondAttribute="bottom" constant="11" id="uMz-nX-97p"/>
                 </constraints>
             </view>

@@ -127,7 +127,7 @@ NSLog(@"dispinitmainviewer");
 - (NSMutableDictionary*) getDefaults
 {
     NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
-	[defaults setValue:@"Segmented Region" forKey:@"NMSegRoiLabel"];
+	[defaults setValue:@"MS lesions Region" forKey:@"MSSegRoiLabel"];
 	[defaults setValue:@"45.0"	forKey:@"NMSegCutOffPercent"];
 	[defaults setValue:@"70.0"	forKey:@"NMSegSearchRegion"];
 	[defaults setValue:@"1"		forKey:@"NMSegNHRadiusX"];
@@ -145,7 +145,7 @@ NSLog(@"dispinitmainviewer");
 	[defaults setValue:@"1"		forKey:@"NMSegShowSeed"];
 	[defaults setValue:@"1"		forKey:@"NMSegShowMaxRegion"];
 	[defaults setValue:@"1"		forKey:@"NMSegDisableClick"];
-	[defaults setValue:[NSData dataWithBytes:color_default length:71] forKey:@"NMSegColor"];
+	[defaults setValue:[NSData dataWithBytes:color_default length:71] forKey:@"MSSegColor"];
     
 	return defaults;
 }
@@ -225,11 +225,11 @@ NSLog(@"dispinitmainviewer");
         
 		if([enableRegViewerButton state] == NSOnState)
 		{
-
+            NSLog(@"regview is enable");
 			NSPoint np;
 			np.x = [[[note userInfo] objectForKey:@"X"] intValue];
 			np.y = [[[note userInfo] objectForKey:@"Y"] intValue];
-			zpx = [[registeredViewer imageView] curImage];
+			 zpx = [[registeredViewer imageView] curImage];
             
 			np = [[mainViewer imageView] ConvertFromGL2GL:np toView:[registeredViewer imageView]];
 			xpx = np.x;
@@ -263,8 +263,8 @@ NSLog(@"dispinitmainviewer");
 		[self setPosX:xpx];
 		[self setPosY:ypx];
 		[self setPosZ:zpx];
-        [self setSliceNumber:(zpx+1)];
-		
+        [self setSliceNumber:[[mainViewer pixList] count]-zpx];
+        //sliceNumber= [[mainViewer imageView] curImage];
 		[self setMmPosX:xmm];
 		[self setMmPosY:ymm];
 		[self setMmPosZ:zmm];
@@ -481,7 +481,7 @@ NSLog(@"dispinitmainviewer");
 	seed[0] = [self posX];
 	seed[1] = [self posY];
 	seed[2] = [self posZ];
-	
+//	[self setSliceNumber:[[mainViewer pixList] count]-posZ];
 	[self removeMaxRegionROI];
 	[self removeSeedPointROI];
 	
@@ -569,7 +569,7 @@ NSLog(@"dispinitmainviewer");
             if (fabs(temporarySignImage[seed[0]][seed[1]])<0.1)
             {
                 [self setIntensityValue:[[[mainViewer imageView] curDCM] getPixelValueX: seed[0] Y:seed[1]]];
-                temporarySignImage[seed[0]][seed[1]] = intensityValue;
+                temporarySignImage[seed[1]][seed[0]] = intensityValue;
                 seedIntensityValue = intensityValue;
                 
                 currentThreshold = intensityValue;
@@ -779,9 +779,9 @@ NSLog(@"dispinitmainviewer");
             NSLog(@"temp(%i,%i)=%f",i,j, temporarySignImage[i][j]) ;
         }
     }*/
-    NSMutableArray *PixList = [mainViewer pixList:0];
-    int t = [[mainViewer imageView] curImage];
-     DCMPix *pix = [PixList objectAtIndex:t];
+  //  NSMutableArray *PixList = [mainViewer pixList:0];
+  //  int t = [[mainViewer imageView] curImage];
+    // DCMPix *pix = [PixList objectAtIndex:t];
     //importFilter->SetImportPointer([pix fImage], bufferSize, false);
     //thresholdFilter->SetInput(importFilter->GetOutput());
     //thresholdFilter->Update();
@@ -797,8 +797,12 @@ NSLog(@"dispinitmainviewer");
     {
         for (int j=0; j<=size[1]; j++)
         {
-            if(temporarySignImage[i][j] > 0.0f)
+            if(temporarySignImage[i][j] > 0.01f)
+            {
                 [[[mainViewer imageView] curDCM] setPixelX:j Y:i value:6255];
+                NSLog(@"tem(%i,%i)=%f",i,j,temporarySignImage[j][i]);
+
+            }
         }
     }
     [mainViewer needsDisplayUpdate];

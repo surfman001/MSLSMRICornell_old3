@@ -32,6 +32,7 @@
 	
 	//Parameters box
 	IBOutlet NSBox* paramsBox;
+    IBOutlet NSTextField *sliceSerialNumber;
 	NSArray	*algorithms;
 	IBOutlet NSPopUpButton* algorithmPopUp;
 	IBOutlet NSTabView* parameterView;
