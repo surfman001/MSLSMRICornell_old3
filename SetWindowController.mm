@@ -11,6 +11,7 @@
 #include "itkImage.h"
 #include "itkImportImageFilter.h"
 #include "itkBinaryThresholdImageFilter.h"
+#import "MSLesionSeed.h"
 
 typedef     float itkPixelType;
 typedef     itk::Image< itkPixelType, 2 > ImageType;
@@ -30,7 +31,7 @@ static char color_default[] = {0x04, 0x0b, 0x73, 0x74, 0x72, 0x65, 0x61, 0x6d, 0
 @synthesize posX, posY, posZ,sliceNumber,lesionSerialNumber;
 @synthesize mmPosX, mmPosY, mmPosZ;
 @synthesize intensityValue;
-
+@synthesize seedsArray;
 
 
 
@@ -40,6 +41,7 @@ static char color_default[] = {0x04, 0x0b, 0x73, 0x74, 0x72, 0x65, 0x61, 0x6d, 0
     if (self) {
         NSLog(@"initwithwindows");
         // Initialization code here.
+        seedsArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -54,7 +56,7 @@ static char color_default[] = {0x04, 0x0b, 0x73, 0x74, 0x72, 0x65, 0x61, 0x6d, 0
 		mainViewer = mViewer;
 		registeredViewer = rViewer;
 		seedPointSelected = NO;
-
+        seedsArray = [[NSMutableArray alloc] init];
 
 		
 		[self showWindow:self];
@@ -268,9 +270,29 @@ NSLog(@"dispinitmainviewer");
 		[self setMmPosX:xmm];
 		[self setMmPosY:ymm];
 		[self setMmPosZ:zmm];
-		
+        int sliceValue = [[mainViewer pixList] count]-zpx;
+        
+        
+        if (seedsArray.count==0)  //if the first seed then set the lesion serial number is 1
+        {
+            [self setLesionSerialNumber:0];
+            //NSLog(@"per2");
+        }
+        else
+        {
+            //NSLog(@"per3");
+            int i=0;
+            for (int j=0;j<seedsArray.count;j=j+4)
+            {
+                if ([[seedsArray objectAtIndex:j] isEqualToNumber: [NSNumber numberWithInt:sliceValue]])
+                {
+                    i++;
+                }
+            }
+            [self setLesionSerialNumber:i];
+        }
 		seedPointSelected = YES;
-		
+		NSLog(@"if seedPointSelected is setted in here suitable, should consider carefully after finish the code ");
 		[self showSeedEnable:self];
 		[self updateThresholds:self];
 	}
@@ -460,7 +482,7 @@ NSLog(@"dispinitmainviewer");
 	
     NSLog(@"Calculate segmentation trigerred");
 	int seed[3], radius[3], iterations = 0;
-   
+    
 	
 	if([[algorithmPopUp selectedItem] tag] == 1)
 	{
@@ -506,7 +528,7 @@ NSLog(@"dispinitmainviewer");
     int         times= [[mainViewer pixList] count];
     int         slices = [mainViewer maxMovieIndex];
     int         lowerThreshold = 6, upThreshold = 100;
-    
+    int seeds[times][20];
 //     NSLog(@"times are %i, slices are %i",times,slices);
 //    slices = [[viewer imageView] curImage];
 //    NSLog(@"viewertimes are %i, slices are %i",times,slices);
@@ -808,6 +830,66 @@ NSLog(@"dispinitmainviewer");
     [mainViewer needsDisplayUpdate];
     
 
+}
+
+- (IBAction) addSeed:(id)sender
+{
+    //NSLog(@"trigered addseed");
+    struct {
+        int sliceSerialNumber;   //the sequence of slices
+        int lesionSerialNumber;  //the sequence of lesions in each slice
+        int seedCoordinatX;     //the x coordinate of seed
+        int seedCoordinatY;     //the y coordinate of seed
+    }seedValue; //create a struct to restore parameter of seed
+    
+    seedValue.sliceSerialNumber = [[mainViewer pixList] count]-posZ; //get information of seed
+    seedValue.seedCoordinatX =posX;
+    seedValue.seedCoordinatY =posY;
+    //NSLog(@"slicenumber is %i, seedx is %i, ssedY is %i",seedValue.sliceSerialNumber,seedValue.seedCoordinatX,seedValue.seedCoordinatY);
+    NSNumber *objSliceSerialNumber = [NSNumber numberWithInt:seedValue.sliceSerialNumber]; //declarate and transfer the atom data to NSNumber object
+    NSNumber *objSeedCoordinatX = [NSNumber numberWithInt:seedValue.seedCoordinatX];
+    NSNumber *objSeedCoordinatY = [NSNumber numberWithInt:seedValue.seedCoordinatY];
+    NSNumber *objLesionSerialNumber;
+
+    //NSLog(@"per1");
+   
+    if (seedsArray.count==0)  //if the first seed then set the lesion serial number is 1
+    {
+        objLesionSerialNumber = [NSNumber numberWithInt:1];
+        [self setLesionSerialNumber:1];
+        //NSLog(@"per2");
+    }
+    else
+    {
+        //NSLog(@"per3");
+        int i=1;
+        for (int j=0;j<seedsArray.count;j=j+4)
+        {
+            if ([[seedsArray objectAtIndex:j] isEqualToNumber: [NSNumber numberWithInt:seedValue.sliceSerialNumber]])
+            {
+                i++;
+            }
+        }
+        objLesionSerialNumber = [NSNumber numberWithInt:i];
+        [self setLesionSerialNumber:i];
+    }
+    NSLog(@"per4");
+    [seedsArray addObject:objSliceSerialNumber];
+    [seedsArray addObject:objLesionSerialNumber];
+    [seedsArray addObject:objSeedCoordinatX];
+    [seedsArray addObject:objSeedCoordinatY];
+    
+    NSLog(@"performe to display");
+    int i=0;
+    for(id obj in seedsArray){
+        i++;
+        NSLog(@"seedArray%i is %@",i,obj);
+    }
+}
+
+- (void) insertObject:(MSLesionSeed *)seed inSeedArrayAtIndex:(NSUInteger)index
+{
+    [seedsArray insertObject:seed  atIndex:index];
 }
 
 - (void) removeMaxRegionROI

@@ -9,11 +9,12 @@
 #import <Cocoa/Cocoa.h>
 #import "OsiriXAPI/ViewerController.h"
 #import <OsiriXAPI/PluginFilter.h>
-
+#import "MSLesionSeed.h"
 @class ITKRegionGrowing3D;
 
 @interface SetWindowController : NSWindowController{
         ViewerController	*viewer;
+    NSMutableArray *seedsArray;
     
     ViewerController *mainViewer, *registeredViewer;
 	//ITKRegionGrowing3D* segmenter;
@@ -70,7 +71,7 @@
 @property (nonatomic, readwrite) float mmPosY;
 @property (nonatomic, readwrite) float mmPosZ;
 @property (nonatomic, readwrite) float intensityValue;
-
+@property (assign, readwrite) NSMutableArray* seedsArray;
 
 /**
  *	Instantiates the class, loads the window nib file, and creates the segmentation object for the viewer combination
@@ -82,6 +83,10 @@
  */
 - (NSMutableDictionary*) getDefaults;
 - (void) fillAlgorithmsPopUp;
+/**
+ *  inserts a seed point in the mutable array
+ */
+- (void) insertObject:(MSLesionSeed *)seed inSeedArrayAtIndex:(NSUInteger)index;
 
 /**
  *	Method triggered by one of the viewers, should close the window associated with this controller
@@ -98,6 +103,10 @@
  */
 - (IBAction) calculate: (id) sender;
 
+/**
+ * Add a seed to the seed array
+ */
+- (IBAction) addSeed:(id)sender;
 /**
  *	Called when the user switched between manual and cut off based thresholding
  */

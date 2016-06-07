@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E50E0961D04757600064A35 /* MSLesionSeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E50E0941D04757600064A35 /* MSLesionSeed.h */; };
+		0E50E0971D04757600064A35 /* MSLesionSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E50E0951D04757600064A35 /* MSLesionSeed.m */; };
 		0E6F6AEA1CFCA5FA00F56B9C /* SetWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E6F6AE61CFCA5FA00F56B9C /* SetWindowController.h */; };
 		0E6F6AEB1CFCA5FA00F56B9C /* SetWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F6AE71CFCA5FA00F56B9C /* SetWindowController.mm */; };
 		0E6F6AEC1CFCA5FA00F56B9C /* SetWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F6AE81CFCA5FA00F56B9C /* SetWindowController.xib */; };
@@ -33,6 +35,8 @@
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		0E50E0941D04757600064A35 /* MSLesionSeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLesionSeed.h; sourceTree = "<group>"; };
+		0E50E0951D04757600064A35 /* MSLesionSeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLesionSeed.m; sourceTree = "<group>"; };
 		0E6F6AE61CFCA5FA00F56B9C /* SetWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetWindowController.h; sourceTree = "<group>"; };
 		0E6F6AE71CFCA5FA00F56B9C /* SetWindowController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SetWindowController.mm; sourceTree = "<group>"; };
 		0E6F6AE81CFCA5FA00F56B9C /* SetWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetWindowController.xib; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 		AB2C26750677B0C400A08910 /* MSLSMRICornellFilter */ = {
 			isa = PBXGroup;
 			children = (
+				0E50E0941D04757600064A35 /* MSLesionSeed.h */,
+				0E50E0951D04757600064A35 /* MSLesionSeed.m */,
 				0E6F6AED1CFCA61800F56B9C /* MSLSMRICornellFilter.h */,
 				0E6F6AEE1CFCA61800F56B9C /* MSLSMRICornellFilter.mm */,
 				0E6F6AE61CFCA5FA00F56B9C /* SetWindowController.h */,
@@ -191,6 +197,7 @@
 				0E6F6B051CFCA79900F56B9C /* Scheduler.h in Headers */,
 				0E6F6AEA1CFCA5FA00F56B9C /* SetWindowController.h in Headers */,
 				8D5B49AE048680CD000E48DA /* MSLSMRICornell_Prefix.pch in Headers */,
+				0E50E0961D04757600064A35 /* MSLesionSeed.h in Headers */,
 				0E6F6B071CFCA79900F56B9C /* ViewerController.h in Headers */,
 				0E6F6B001CFCA79900F56B9C /* MyPoint.h in Headers */,
 			);
@@ -273,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E6F6AEB1CFCA5FA00F56B9C /* SetWindowController.mm in Sources */,
+				0E50E0971D04757600064A35 /* MSLesionSeed.m in Sources */,
 				0E6F6AF01CFCA61800F56B9C /* MSLSMRICornellFilter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
