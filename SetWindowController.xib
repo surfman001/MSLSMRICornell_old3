@@ -132,7 +132,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s5J-d4-IGd">
-                                    <rect key="frame" x="15" y="255" width="109" height="14"/>
+                                    <rect key="frame" x="22" y="225" width="109" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Slice Serial Number" id="HZR-3Q-eZc">
                                         <font key="font" metaFont="smallSystem"/>
@@ -141,7 +141,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mQ5-FD-dQI">
-                                    <rect key="frame" x="194" y="253" width="60" height="19"/>
+                                    <rect key="frame" x="201" y="223" width="60" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="60" id="qnk-Av-mxQ"/>
@@ -157,7 +157,7 @@
                                     </connections>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-aJ-21L">
-                                    <rect key="frame" x="15" y="229" width="121" height="14"/>
+                                    <rect key="frame" x="22" y="199" width="121" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Lesion Serial Number:" id="vji-6r-nPo">
                                         <font key="font" metaFont="smallSystem"/>
@@ -166,7 +166,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Btt-5q-HOQ">
-                                    <rect key="frame" x="194" y="227" width="60" height="19"/>
+                                    <rect key="frame" x="201" y="197" width="60" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="JVv-jL-ND0">
                                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="BWj-vJ-8X6"/>
@@ -179,7 +179,7 @@
                                     </connections>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pr6-v2-AZt">
-                                    <rect key="frame" x="95" y="182" width="14" height="14"/>
+                                    <rect key="frame" x="102" y="152" width="14" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Y:" id="Lez-2c-Ldo">
                                         <font key="font" metaFont="smallSystem"/>
@@ -188,7 +188,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i3a-xi-jEj">
-                                    <rect key="frame" x="18" y="182" width="15" height="14"/>
+                                    <rect key="frame" x="25" y="152" width="15" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="X:" id="2xl-Ca-sfK">
                                         <font key="font" metaFont="smallSystem"/>
@@ -196,8 +196,8 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3qi-fu-nm1">
-                                    <rect key="frame" x="18" y="160" width="15" height="14"/>
+                                <textField appearanceType="aqua" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3qi-fu-nm1">
+                                    <rect key="frame" x="25" y="130" width="15" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="X:" id="LrG-8I-Rz0">
                                         <font key="font" metaFont="smallSystem"/>
@@ -206,7 +206,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Roc-dA-BYg">
-                                    <rect key="frame" x="15" y="133" width="84" height="14"/>
+                                    <rect key="frame" x="22" y="103" width="84" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Intensity Value:" id="rKZ-fT-cTi">
                                         <font key="font" metaFont="smallSystem"/>
@@ -215,7 +215,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vjp-Ke-mLK">
-                                    <rect key="frame" x="175" y="159" width="20" height="14"/>
+                                    <rect key="frame" x="182" y="129" width="20" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="16" id="jqC-9Z-h0H"/>
@@ -227,7 +227,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="R26-3f-xyS">
-                                    <rect key="frame" x="254" y="162" width="31" height="14"/>
+                                    <rect key="frame" x="261" y="132" width="31" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="(mm)" id="cPp-cX-eZ5">
                                         <font key="font" metaFont="smallSystem"/>
@@ -236,7 +236,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="REr-rN-jNe">
-                                    <rect key="frame" x="180" y="182" width="36" height="14"/>
+                                    <rect key="frame" x="187" y="152" width="36" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="(pixel)" id="mqk-Xk-01L">
                                         <font key="font" metaFont="smallSystem"/>
@@ -245,7 +245,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ppD-Lb-WGx">
-                                    <rect key="frame" x="95" y="160" width="14" height="14"/>
+                                    <rect key="frame" x="102" y="130" width="14" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Y:" id="Wxi-n2-cSb">
                                         <font key="font" metaFont="smallSystem"/>
@@ -254,7 +254,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="21S-g4-yzl">
-                                    <rect key="frame" x="15" y="202" width="81" height="14"/>
+                                    <rect key="frame" x="22" y="172" width="81" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Seed Position:" id="kXH-ct-TcK">
                                         <font key="font" metaFont="smallSystem"/>
@@ -262,13 +262,8 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <stepper appearanceType="aqua" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hYY-CZ-1if">
-                                    <rect key="frame" x="229" y="299" width="15" height="22"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" maxValue="100" id="XI7-29-xyD"/>
-                                </stepper>
-                                <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gWp-0j-U9A">
-                                    <rect key="frame" x="32" y="180" width="60" height="19"/>
+                                <textField appearanceType="aqua" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWp-0j-U9A">
+                                    <rect key="frame" x="39" y="150" width="60" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="eaC-ks-CFy">
                                         <font key="font" metaFont="smallSystem"/>
@@ -280,7 +275,7 @@
                                     </connections>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOE-Qi-K7z">
-                                    <rect key="frame" x="112" y="180" width="60" height="19"/>
+                                    <rect key="frame" x="119" y="150" width="60" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="HeL-M7-gzO">
                                         <font key="font" metaFont="smallSystem"/>
@@ -291,8 +286,8 @@
                                         <binding destination="-2" name="value" keyPath="self.posY" id="KVx-BO-uce"/>
                                     </connections>
                                 </textField>
-                                <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jza-lg-qYB">
-                                    <rect key="frame" x="32" y="157" width="60" height="19"/>
+                                <textField appearanceType="aqua" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jza-lg-qYB">
+                                    <rect key="frame" x="39" y="127" width="60" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="vg2-Q4-arI">
                                         <font key="font" metaFont="smallSystem"/>
@@ -304,7 +299,7 @@
                                     </connections>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b06-5M-ftB">
-                                    <rect key="frame" x="112" y="157" width="60" height="19"/>
+                                    <rect key="frame" x="119" y="127" width="60" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="sCk-dh-fK0">
                                         <font key="font" metaFont="smallSystem"/>
@@ -316,7 +311,7 @@
                                     </connections>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lsM-ps-NIk">
-                                    <rect key="frame" x="-18" y="0.0" width="18" height="19"/>
+                                    <rect key="frame" x="-11" y="-30" width="18" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ipT-ln-3Yd">
                                         <font key="font" metaFont="smallSystem"/>
@@ -324,8 +319,8 @@
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K0z-g7-aHo">
-                                    <rect key="frame" x="101" y="132" width="55" height="19"/>
+                                <textField appearanceType="aqua" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K0z-g7-aHo">
+                                    <rect key="frame" x="108" y="102" width="55" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="dzi-qy-Pno">
                                         <font key="font" metaFont="smallSystem"/>
@@ -337,7 +332,7 @@
                                     </connections>
                                 </textField>
                                 <button appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-Em-sb1">
-                                    <rect key="frame" x="9" y="80" width="236" height="18"/>
+                                    <rect key="frame" x="16" y="50" width="236" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Use Registered Viewer for Segmentation" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" imageScaling="proportionallyDown" inset="2" id="r8a-5e-PCF">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -348,7 +343,7 @@
                                     </connections>
                                 </button>
                                 <button appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="vdp-8U-PJI">
-                                    <rect key="frame" x="9" y="60" width="90" height="18"/>
+                                    <rect key="frame" x="16" y="30" width="90" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Show Seed" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" imageScaling="proportionallyDown" inset="2" id="v9e-iW-37N">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -359,7 +354,7 @@
                                     </connections>
                                 </button>
                                 <button appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="xUi-AS-mlx">
-                                    <rect key="frame" x="123" y="60" width="118" height="18"/>
+                                    <rect key="frame" x="130" y="30" width="118" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Show Max Region" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" imageScaling="proportionallyDown" inset="2" id="hT6-bG-vLa">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -370,7 +365,7 @@
                                     </connections>
                                 </button>
                                 <button appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="FPy-n6-yAH">
-                                    <rect key="frame" x="9" y="40" width="211" height="18"/>
+                                    <rect key="frame" x="16" y="10" width="211" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Disable Click Events in Main Viewer" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" imageScaling="proportionallyDown" inset="2" id="OfK-8W-DkG">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -378,7 +373,7 @@
                                     </buttonCell>
                                 </button>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kik-2q-afp">
-                                    <rect key="frame" x="194" y="157" width="60" height="19"/>
+                                    <rect key="frame" x="201" y="127" width="60" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="lTF-qD-IAu">
                                         <font key="font" metaFont="smallSystem"/>
@@ -390,12 +385,12 @@
                                     </connections>
                                 </textField>
                                 <button appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvF-ay-ctz">
-                                    <rect key="frame" x="27" y="102" width="63" height="28"/>
+                                    <rect key="frame" x="34" y="72" width="70" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <shadow key="shadow">
                                         <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </shadow>
-                                    <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nyw-cN-4zg">
+                                    <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nyw-cN-4zg" userLabel="Button Cell - Remove">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="smallSystem"/>
                                         <string key="keyEquivalent" base64-UTF8="YES">
@@ -404,12 +399,12 @@ Gw
                                     </buttonCell>
                                 </button>
                                 <button appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QC0-db-nyx">
-                                    <rect key="frame" x="178" y="102" width="80" height="28"/>
+                                    <rect key="frame" x="185" y="72" width="80" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <shadow key="shadow">
                                         <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </shadow>
-                                    <buttonCell key="cell" type="push" title="Checked" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IPa-ou-dPn">
+                                    <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IPa-ou-dPn">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="smallSystem"/>
                                     </buttonCell>
@@ -417,15 +412,35 @@ Gw
                                         <action selector="addSeed:" target="-2" id="e5J-X8-Qxb"/>
                                     </connections>
                                 </button>
+                                <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACJ-eU-NI3">
+                                    <rect key="frame" x="22" y="253" width="144" height="14"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Seed Point Serial Number:" id="3j7-OX-40y">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ObP-hR-aVk">
+                                    <rect key="frame" x="201" y="248" width="60" height="19"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="rgz-yT-Nye">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="self.seedPointSerialNumber" id="tjB-bu-xAW"/>
+                                    </connections>
+                                </textField>
                             </subviews>
                         </view>
                         <constraints>
-                            <constraint firstItem="3qi-fu-nm1" firstAttribute="top" secondItem="gOw-sE-sEl" secondAttribute="top" constant="118" id="08e-1Y-dcA"/>
-                            <constraint firstItem="pr6-v2-AZt" firstAttribute="leading" secondItem="ppD-Lb-WGx" secondAttribute="leading" constant="1" id="1U9-4R-EgT"/>
+                            <constraint firstItem="3qi-fu-nm1" firstAttribute="top" secondItem="gOw-sE-sEl" secondAttribute="top" constant="148" id="08e-1Y-dcA"/>
+                            <constraint firstItem="pr6-v2-AZt" firstAttribute="leading" secondItem="ppD-Lb-WGx" secondAttribute="leading" id="1U9-4R-EgT"/>
                             <constraint firstItem="gxn-aJ-21L" firstAttribute="centerY" secondItem="Btt-5q-HOQ" secondAttribute="centerY" id="2c8-bM-M6q"/>
                             <constraint firstItem="Jza-lg-qYB" firstAttribute="trailing" secondItem="gWp-0j-U9A" secondAttribute="trailing" id="3Hr-ed-7wg"/>
-                            <constraint firstItem="hYY-CZ-1if" firstAttribute="leading" secondItem="mQ5-FD-dQI" secondAttribute="trailing" constant="-23" id="70X-aD-RFy"/>
-                            <constraint firstItem="3qi-fu-nm1" firstAttribute="leading" secondItem="gOw-sE-sEl" secondAttribute="leading" constant="18" id="8sD-co-MTW"/>
+                            <constraint firstItem="3qi-fu-nm1" firstAttribute="leading" secondItem="gOw-sE-sEl" secondAttribute="leading" constant="25" id="8sD-co-MTW"/>
                             <constraint firstItem="R26-3f-xyS" firstAttribute="leading" secondItem="Vjp-Ke-mLK" secondAttribute="trailing" constant="63" id="9YN-W8-a6l"/>
                             <constraint firstItem="b06-5M-ftB" firstAttribute="top" secondItem="EOE-Qi-K7z" secondAttribute="bottom" constant="4" id="AmQ-j9-Mcf"/>
                             <constraint firstItem="Btt-5q-HOQ" firstAttribute="top" secondItem="mQ5-FD-dQI" secondAttribute="bottom" constant="7" id="DOK-aa-GDg"/>
@@ -436,41 +451,40 @@ Gw
                             <constraint firstItem="Jza-lg-qYB" firstAttribute="baseline" secondItem="b06-5M-ftB" secondAttribute="baseline" id="KHy-Bu-GgS"/>
                             <constraint firstItem="s5J-d4-IGd" firstAttribute="centerY" secondItem="mQ5-FD-dQI" secondAttribute="centerY" id="Mem-aK-kdH"/>
                             <constraint firstItem="Roc-dA-BYg" firstAttribute="leading" secondItem="s5J-d4-IGd" secondAttribute="leading" id="Nxv-7n-Xde"/>
-                            <constraint firstItem="vdp-8U-PJI" firstAttribute="leading" secondItem="gOw-sE-sEl" secondAttribute="leading" constant="10" id="OGd-2n-gZh"/>
-                            <constraint firstItem="ppD-Lb-WGx" firstAttribute="leading" secondItem="Jza-lg-qYB" secondAttribute="trailing" constant="8" id="OtD-ls-eBw"/>
+                            <constraint firstItem="vdp-8U-PJI" firstAttribute="leading" secondItem="gOw-sE-sEl" secondAttribute="leading" constant="17" id="OGd-2n-gZh"/>
+                            <constraint firstItem="ppD-Lb-WGx" firstAttribute="leading" secondItem="Jza-lg-qYB" secondAttribute="trailing" constant="5" id="OtD-ls-eBw"/>
                             <constraint firstItem="Jza-lg-qYB" firstAttribute="top" secondItem="R26-3f-xyS" secondAttribute="top" id="Pzs-rY-Hsf"/>
                             <constraint firstItem="xUi-AS-mlx" firstAttribute="leading" secondItem="vdp-8U-PJI" secondAttribute="trailing" constant="29" id="Qu8-PS-CYz"/>
                             <constraint firstItem="3qi-fu-nm1" firstAttribute="baseline" secondItem="ppD-Lb-WGx" secondAttribute="baseline" id="Sga-FE-zXX"/>
                             <constraint firstItem="Jza-lg-qYB" firstAttribute="leading" secondItem="3qi-fu-nm1" secondAttribute="trailing" constant="1" id="UDe-SX-4zC"/>
-                            <constraint firstItem="R26-3f-xyS" firstAttribute="top" secondItem="hYY-CZ-1if" secondAttribute="bottom" constant="125" id="UUt-rO-Gzv"/>
-                            <constraint firstAttribute="bottom" secondItem="s5J-d4-IGd" secondAttribute="bottom" constant="252" id="Ugz-hN-I6H"/>
+                            <constraint firstAttribute="bottom" secondItem="s5J-d4-IGd" secondAttribute="bottom" constant="222" id="Ugz-hN-I6H"/>
                             <constraint firstItem="vdp-8U-PJI" firstAttribute="top" secondItem="C1d-Em-sb1" secondAttribute="bottom" constant="8" id="VDE-Jk-Ew3"/>
                             <constraint firstItem="mQ5-FD-dQI" firstAttribute="leading" secondItem="Btt-5q-HOQ" secondAttribute="leading" id="Wuj-Ds-U9s"/>
-                            <constraint firstItem="ppD-Lb-WGx" firstAttribute="leading" secondItem="3qi-fu-nm1" secondAttribute="trailing" constant="69" id="Yw8-6l-frX"/>
-                            <constraint firstItem="Vjp-Ke-mLK" firstAttribute="leading" secondItem="gOw-sE-sEl" secondAttribute="leading" constant="175" id="ZNx-J4-RLS"/>
+                            <constraint firstItem="ppD-Lb-WGx" firstAttribute="leading" secondItem="3qi-fu-nm1" secondAttribute="trailing" constant="66" id="Yw8-6l-frX"/>
+                            <constraint firstItem="Vjp-Ke-mLK" firstAttribute="leading" secondItem="gOw-sE-sEl" secondAttribute="leading" constant="182" id="ZNx-J4-RLS"/>
                             <constraint firstItem="ppD-Lb-WGx" firstAttribute="top" secondItem="pr6-v2-AZt" secondAttribute="bottom" constant="8" id="a5e-7x-WgZ"/>
                             <constraint firstItem="3qi-fu-nm1" firstAttribute="leading" secondItem="i3a-xi-jEj" secondAttribute="leading" id="aLj-wA-fvt"/>
-                            <constraint firstAttribute="bottom" secondItem="vdp-8U-PJI" secondAttribute="bottom" constant="60" id="atA-xv-fIy"/>
+                            <constraint firstAttribute="bottom" secondItem="vdp-8U-PJI" secondAttribute="bottom" constant="30" id="atA-xv-fIy"/>
                             <constraint firstItem="vdp-8U-PJI" firstAttribute="baseline" secondItem="xUi-AS-mlx" secondAttribute="baseline" id="brR-HW-oPm"/>
                             <constraint firstItem="Roc-dA-BYg" firstAttribute="top" secondItem="3qi-fu-nm1" secondAttribute="bottom" constant="13" id="dIQ-xg-flz"/>
                             <constraint firstItem="vdp-8U-PJI" firstAttribute="leading" secondItem="FPy-n6-yAH" secondAttribute="leading" id="evx-Sd-Tod"/>
-                            <constraint firstItem="s5J-d4-IGd" firstAttribute="leading" secondItem="gOw-sE-sEl" secondAttribute="leading" constant="15" id="fKg-wB-zIq"/>
+                            <constraint firstItem="s5J-d4-IGd" firstAttribute="leading" secondItem="gOw-sE-sEl" secondAttribute="leading" constant="22" id="fKg-wB-zIq"/>
                             <constraint firstItem="mQ5-FD-dQI" firstAttribute="leading" secondItem="s5J-d4-IGd" secondAttribute="trailing" constant="72" id="fQg-Vh-FbC"/>
                             <constraint firstItem="Vjp-Ke-mLK" firstAttribute="centerX" secondItem="REr-rN-jNe" secondAttribute="centerX" constant="-13" id="hEw-ir-amj"/>
                             <constraint firstItem="b06-5M-ftB" firstAttribute="leading" secondItem="ppD-Lb-WGx" secondAttribute="trailing" constant="5" id="leF-Sb-ng6"/>
                             <constraint firstItem="K0z-g7-aHo" firstAttribute="top" secondItem="b06-5M-ftB" secondAttribute="bottom" constant="6" id="lt5-Mn-8FH"/>
                             <constraint firstItem="Jza-lg-qYB" firstAttribute="top" secondItem="gWp-0j-U9A" secondAttribute="bottom" constant="4" id="mKY-1j-xsj"/>
                             <constraint firstItem="Btt-5q-HOQ" firstAttribute="leading" secondItem="gxn-aJ-21L" secondAttribute="trailing" constant="60" id="mKq-HT-gW5"/>
-                            <constraint firstItem="b06-5M-ftB" firstAttribute="trailing" secondItem="K0z-g7-aHo" secondAttribute="trailing" constant="19" id="pTf-Ld-37M"/>
+                            <constraint firstItem="b06-5M-ftB" firstAttribute="trailing" secondItem="K0z-g7-aHo" secondAttribute="trailing" constant="16" id="pTf-Ld-37M"/>
                             <constraint firstItem="mQ5-FD-dQI" firstAttribute="trailing" secondItem="Btt-5q-HOQ" secondAttribute="trailing" id="qMe-oG-nel"/>
-                            <constraint firstItem="s5J-d4-IGd" firstAttribute="top" secondItem="gOw-sE-sEl" secondAttribute="top" constant="23" id="rB2-tT-1R9"/>
-                            <constraint firstItem="pr6-v2-AZt" firstAttribute="trailing" secondItem="ppD-Lb-WGx" secondAttribute="trailing" constant="1" id="rax-4N-RFk"/>
+                            <constraint firstItem="s5J-d4-IGd" firstAttribute="top" secondItem="gOw-sE-sEl" secondAttribute="top" constant="53" id="rB2-tT-1R9"/>
+                            <constraint firstItem="pr6-v2-AZt" firstAttribute="trailing" secondItem="ppD-Lb-WGx" secondAttribute="trailing" id="rax-4N-RFk"/>
                             <constraint firstItem="Roc-dA-BYg" firstAttribute="leading" secondItem="21S-g4-yzl" secondAttribute="leading" id="rkq-a4-d6C"/>
-                            <constraint firstAttribute="trailing" secondItem="vdp-8U-PJI" secondAttribute="trailing" constant="199" id="roO-ng-13e"/>
+                            <constraint firstAttribute="trailing" secondItem="vdp-8U-PJI" secondAttribute="trailing" constant="192" id="roO-ng-13e"/>
                             <constraint firstItem="b06-5M-ftB" firstAttribute="leading" secondItem="EOE-Qi-K7z" secondAttribute="leading" id="tSN-pT-1aH"/>
-                            <constraint firstItem="b06-5M-ftB" firstAttribute="leading" secondItem="K0z-g7-aHo" secondAttribute="leading" constant="14" id="u8R-25-x0g"/>
-                            <constraint firstAttribute="trailing" secondItem="Vjp-Ke-mLK" secondAttribute="trailing" constant="103" id="v3z-hc-Lq4"/>
-                            <constraint firstItem="Vjp-Ke-mLK" firstAttribute="leading" secondItem="b06-5M-ftB" secondAttribute="trailing" constant="2" id="vBu-mJ-UWx"/>
+                            <constraint firstItem="b06-5M-ftB" firstAttribute="leading" secondItem="K0z-g7-aHo" secondAttribute="leading" constant="11" id="u8R-25-x0g"/>
+                            <constraint firstAttribute="trailing" secondItem="Vjp-Ke-mLK" secondAttribute="trailing" constant="96" id="v3z-hc-Lq4"/>
+                            <constraint firstItem="Vjp-Ke-mLK" firstAttribute="leading" secondItem="b06-5M-ftB" secondAttribute="trailing" constant="5" id="vBu-mJ-UWx"/>
                             <constraint firstItem="3qi-fu-nm1" firstAttribute="top" secondItem="i3a-xi-jEj" secondAttribute="bottom" constant="8" symbolic="YES" id="vXh-Ja-uUP"/>
                             <constraint firstItem="21S-g4-yzl" firstAttribute="top" secondItem="gxn-aJ-21L" secondAttribute="bottom" constant="13" id="w3r-7c-QuN"/>
                             <constraint firstItem="b06-5M-ftB" firstAttribute="trailing" secondItem="EOE-Qi-K7z" secondAttribute="trailing" id="wBe-wB-GGn"/>

@@ -27,7 +27,7 @@
 	IBOutlet NSTextField *seedLabel;
 	IBOutlet NSButton *enableRegViewerButton;
 	IBOutlet NSButton *disableClickButton;
-	int posX, posY, posZ,sliceNumber,lesionSerialNumber;
+	int posX, posY, posZ,sliceNumber,lesionSerialNumber, seedPointSerialNumber;
 	float mmPosX, mmPosY, mmPosZ;
 	float intensityValue;
 	
@@ -66,7 +66,7 @@
 @property (nonatomic, readwrite) int posY;
 @property (nonatomic, readwrite) int posZ;
 @property (nonatomic, readwrite) int sliceNumber;
-@property (nonatomic, readwrite) int lesionSerialNumber;
+@property (nonatomic, readwrite) int seedPointSerialNumber,lesionSerialNumber;
 @property (nonatomic, readwrite) float mmPosX;
 @property (nonatomic, readwrite) float mmPosY;
 @property (nonatomic, readwrite) float mmPosZ;
