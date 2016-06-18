@@ -10,7 +10,8 @@
 #import "OsiriXAPI/ViewerController.h"
 #import <OsiriXAPI/PluginFilter.h>
 #import "MSLesionSeed.h"
-@class ITKRegionGrowing3D;
+@class DCMView;
+//@class ITKRegionGrowing3D;
 
 @interface SetWindowController : NSWindowController{
         ViewerController	*viewer;
@@ -27,11 +28,14 @@
 	IBOutlet NSTextField *seedLabel;
 	IBOutlet NSButton *enableRegViewerButton;
 	IBOutlet NSButton *disableClickButton;
-	int posX, posY, posZ,sliceNumber,lesionSerialNumber, seedPointSerialNumber;
+	int posX, posY, posZ,sliceNumber,lesionSerialNumber, seedPointSerialNumber,removeSeedNumber;
 	float mmPosX, mmPosY, mmPosZ;
 	float intensityValue;
 	
 	//Parameters box
+    IBOutlet NSTextField *inputSegmentSeed;
+    IBOutlet NSStepper *inputSegmentStepper;
+    
 	IBOutlet NSBox* paramsBox;
     IBOutlet NSTextField *sliceSerialNumber;
 	NSArray	*algorithms;
@@ -66,7 +70,7 @@
 @property (nonatomic, readwrite) int posY;
 @property (nonatomic, readwrite) int posZ;
 @property (nonatomic, readwrite) int sliceNumber;
-@property (nonatomic, readwrite) int seedPointSerialNumber,lesionSerialNumber;
+@property (nonatomic, readwrite) int seedPointSerialNumber,lesionSerialNumber,removeSeedNumber;
 @property (nonatomic, readwrite) float mmPosX;
 @property (nonatomic, readwrite) float mmPosY;
 @property (nonatomic, readwrite) float mmPosZ;
@@ -136,6 +140,11 @@
  * Removes all the ROIs associated with seed selection, called upon initialization and after the user selects a new seed point
  */
 - (void) removeSeedPointROI;
+
+/**
+ * Removes the seed point from multiple seeds
+ */
+- (IBAction)removeSeedPoint:(id)sender;
 
 /**
  *	Triggers the Max region ROI to be show or deletee, depending upon the user's selection

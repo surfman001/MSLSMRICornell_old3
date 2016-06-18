@@ -10,6 +10,7 @@
                 <outlet property="colorBox" destination="alZ-hQ-ofn" id="FyQ-Zg-ZRT"/>
                 <outlet property="disableClickButton" destination="FPy-n6-yAH" id="8W2-ow-UA1"/>
                 <outlet property="enableRegViewerButton" destination="C1d-Em-sb1" id="LT0-q2-k6M"/>
+                <outlet property="inputSegmentSeed" destination="ObP-hR-aVk" id="fhx-gm-TTx"/>
                 <outlet property="roiNameBox" destination="fBv-Vc-fIG" id="iB9-Bh-HyM"/>
                 <outlet property="showMaxRegionButton" destination="xUi-AS-mlx" id="nNL-Mc-69y"/>
                 <outlet property="showSeedButton" destination="vdp-8U-PJI" id="5sa-n9-U2k"/>
@@ -154,6 +155,7 @@
                                     </textFieldCell>
                                     <connections>
                                         <binding destination="-2" name="value" keyPath="self.sliceNumber" id="Tzs-Uv-ZIC"/>
+                                        <outlet property="delegate" destination="-2" id="J1g-dj-JdT"/>
                                     </connections>
                                 </textField>
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-aJ-21L">
@@ -397,6 +399,9 @@
 Gw
 </string>
                                     </buttonCell>
+                                    <connections>
+                                        <action selector="removeSeedPoint:" target="-2" id="hUF-B3-FBM"/>
+                                    </connections>
                                 </button>
                                 <button appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QC0-db-nyx">
                                     <rect key="frame" x="185" y="72" width="80" height="28"/>
@@ -424,13 +429,14 @@ Gw
                                 <textField appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ObP-hR-aVk">
                                     <rect key="frame" x="201" y="248" width="60" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="rgz-yT-Nye">
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="rgz-yT-Nye">
                                         <font key="font" metaFont="smallSystem"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
                                         <binding destination="-2" name="value" keyPath="self.seedPointSerialNumber" id="tjB-bu-xAW"/>
+                                        <outlet property="delegate" destination="-2" id="NAL-mx-svt"/>
                                     </connections>
                                 </textField>
                             </subviews>

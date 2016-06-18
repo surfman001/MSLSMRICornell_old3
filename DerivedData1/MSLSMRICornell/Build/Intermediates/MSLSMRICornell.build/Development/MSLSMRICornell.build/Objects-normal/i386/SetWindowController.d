@@ -173,4 +173,5 @@ dependencies: \
   ITK180/Modules/Core/Common/include/itkProgressReporter.h \
   ITK180/Modules/Core/Common/include/itkSimpleDataObjectDecorator.h \
   ITK180/Modules/Core/Common/include/itkSimpleDataObjectDecorator.hxx \
-  ITK180/Modules/Filtering/Thresholding/include/itkBinaryThresholdImageFilter.hxx
+  ITK180/Modules/Filtering/Thresholding/include/itkBinaryThresholdImageFilter.hxx \
+  ITK180/Modules/Filtering/ImageFilterBase/include/itkCastImageFilter.h
